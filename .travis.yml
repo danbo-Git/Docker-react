@@ -7,3 +7,15 @@ before_install:
 
 script:
     - docker run -e CI=true danbo-git/docker-react yarn test
+
+deploy: 
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "DanbodockerReact"
+  env: "DanbodockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-138438726154"
+  bucket_path: "DanbodockerReact"  # Defaults to app name when newly created.
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY

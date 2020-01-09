@@ -11,10 +11,10 @@ script:
 deploy: 
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "DanbodockerReact"
+  app: "danboDocker-React"
   env: "DanbodockerReact-env"
   bucket_name: "elasticbeanstalk-us-east-2-138438726154"
-  bucket_path: "DanbodockerReact"  # Defaults to app name when newly created.
+  bucket_path: "DanbodockerReact-env"  # Defaults to env name when newly created; Aka App
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
